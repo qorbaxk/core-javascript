@@ -4,3 +4,4 @@
 - [x] Code Structure
 - [x] Variables
 - [x] Static Mode
+- [x] Global This
