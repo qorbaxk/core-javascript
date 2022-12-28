@@ -3,4 +3,4 @@
 
 - [x] Code Structure
 - [x] Variables
-- [ ] Static Mode
+- [x] Static Mode
