@@ -6,3 +6,4 @@
 - [x] Static Mode
 - [x] Global This
 - [x] Data Type
+- [x] Type Conversion
