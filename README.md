@@ -5,3 +5,4 @@
 - [x] Variables
 - [x] Static Mode
 - [x] Global This
+- [x] Data Type
