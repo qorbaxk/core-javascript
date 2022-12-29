@@ -61,12 +61,14 @@ console.log(parseFloat(width,10)); //부동소수점 실수로 파싱
 // null, undefined, 0, NaN, '' -> false
 console.log(Boolean(null));
 console.log(Boolean(!null));
-console.log(Boolean(!!null));
+// console.log(Boolean(!!null));
 console.log(Boolean(undefined));
 console.log(Boolean(0));
 console.log(Boolean("0"));
 console.log(Boolean(NaN));
 console.log(Boolean(''));
-console.log(Boolean(!!''));
+// console.log(Boolean(!!''));
+
+
 
 // 위에 나열한 것 이외의 것들 

@@ -7,3 +7,4 @@
 - [x] Global This
 - [x] Data Type
 - [x] Type Conversion
+- [x] Operations
