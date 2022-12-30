@@ -34,18 +34,17 @@ console.log(whichFalsy); //전부 true라서 마지막 값이 반환됨
 let whichTruthy = false || "" || [2, 3].length || { thisIsTruthy: true };
 console.log(whichTruthy);
 
-
 // 로그인 구현하기
 
-let userName = prompt("이름을 입력하세요").toUpperCase();
-if (userName === "ADMIN") {
-  let pw = prompt("비밀번호를 입력하세요").toUpperCase();
-  pw === "THEMASTER"
+let userName = prompt("이름을 입력하세요");
+if (userName?.toUpperCase() === "ADMIN") {
+  let pw = prompt("비밀번호를 입력하세요");
+  pw?.toUpperCase() === "THEMASTER"
     ? console.log("환영합니다!")
     : pw === "" || pw === null
     ? console.log("취소되었습니다.")
     : console.log("인증에 실패하였습니다.");
-} else if (userName === "" || userName === null) {
+} else if (userName.replace(/\s*/g,'') === "" || userName === null) {
   console.log("취소되었습니다.");
 } else {
   console.log("난 너가 누군지 모른다.");
