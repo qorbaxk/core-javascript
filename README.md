@@ -9,4 +9,5 @@
 - [x] Type Conversion
 - [x] Operations
 - [x] Condition
-- [ ] Loop
+- [x] Loop
+- [ ] Function
