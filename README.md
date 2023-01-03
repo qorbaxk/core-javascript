@@ -5,8 +5,5 @@
 
 해당 학습자료는 해당 브랜치로 이동 후 확인 가능합니다.
 
-[링크](https://www.youtube.com/)
-[JavaScript Core 브랜치]()
 
-- [ ] 체크 안 된거
-- [x] 체크 된 거
+[JavaScript Core 브랜치](https://github.com/qorbaxk/core-javascript/tree/01.core)
