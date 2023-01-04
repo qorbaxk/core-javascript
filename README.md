@@ -10,4 +10,4 @@
 - [x] Operations
 - [x] Condition
 - [x] Loop
-- [ ] Function
+- [x] Function
