@@ -11,3 +11,4 @@
 - [x] Condition
 - [x] Loop
 - [x] Function
+- [ ] Object
