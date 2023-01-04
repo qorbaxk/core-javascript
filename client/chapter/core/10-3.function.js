@@ -76,6 +76,8 @@ user.totalGrades();
 /* 다음 함수를 작성해봅니다. -------------------------------------------------- */
 
 // pow(numeric: number, powerCount: number): number;
+
+//for문으로 구한 제곱식
 const pow = (numeric, powerCount) => {
   let pow = 1;
   for (let i = 1; i <= powerCount; i++) {
@@ -84,11 +86,37 @@ const pow = (numeric, powerCount) => {
   return pow;
 };
 
-console.log(pow(2, 53));
+//배열 생성후 reduce로 구한 제곱식
+const powExpression = (numeric, powerCount) => {
+  let arr = Array(powerCount)
+    .fill(numeric)
+    .reduce((prev, acc) => prev * acc, 1);
+
+  return arr;
+};
+
+console.log("for문으로 구한 제곱식: ", pow(2, 53));
+console.log("배열 생성후 reduce로 구한 제곱식: ", powExpression(2, 53));
 
 // repeat(text: string, repeatCount: number): string;
+
+//for문을 이용하여 반복하기
 const repeat = (text, repeatCount) => {
-  return text.repeat(repeatCount);
+  let result = "";
+  for (let i = 0; i < repeatCount; i++) {
+    result += text;
+  }
+  return result;
 };
 
 console.log(repeat("hello", 3));
+
+//repeat 함수 쓰기
+const repeat2 = (text, repeatCount) => {
+  let arr = Array(repeatCount)
+    .fill(text)
+    .reduce((prev, acc) => prev + acc, "");
+  return arr;
+};
+
+console.log(repeat2('loveyou',4));
