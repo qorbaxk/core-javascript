@@ -18,3 +18,4 @@
 - [x] Primitive Methods (Object Wrapper)
 - [x] Number
 - [x] String
+- [x] Array
