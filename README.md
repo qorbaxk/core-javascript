@@ -16,3 +16,4 @@
 - [x] Closer
 - [x] Optional Chaining
 - [x] Primitive Methods (Object Wrapper)
+- [x] Number
