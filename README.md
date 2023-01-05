@@ -11,4 +11,6 @@
 - [x] Condition
 - [x] Loop
 - [x] Function
-- [ ] Object
+- [x] Object
+- [x] Method
+- [x] Closer
