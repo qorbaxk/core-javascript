@@ -15,3 +15,4 @@
 - [x] Method
 - [x] Closer
 - [x] Optional Chaining
+- [x] Primitive Methods (Object Wrapper)
