@@ -14,3 +14,4 @@
 - [x] Object
 - [x] Method
 - [x] Closer
+- [x] Optional Chaining
