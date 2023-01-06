@@ -19,3 +19,4 @@
 - [x] Number
 - [x] String
 - [x] Array
+- [x] Try..Catch
