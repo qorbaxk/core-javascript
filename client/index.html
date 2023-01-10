@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="./lib/dom/getNode.js"></script>
-    <script defer src="./chapter/dom/02.nodeClass.js"></script>
+    <script src="./lib/dom/attr.js"></script>
+    <script src="./lib/dom/insert.js"></script>
+    <script src="./lib/error/typeError.js"></script>
+    <script defer src="./chapter/dom/04.manipulation.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -24,6 +27,18 @@
 
       elem1.innerHTML = name;
       elem2.textContent = name;
+    </script> -->
+
+    <!-- <div data-widget-name="menu">Choose the genre</div>
+
+    <script>
+      // getting it
+      let elem = document.querySelector("[data-widget-name]");
+
+      // reading the value
+      alert(elem.dataset.widgetName);
+      // or
+      alert(elem.getAttribute("data-widget-name"));
     </script> -->
   </body>
 </html>
