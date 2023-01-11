@@ -1,2 +1,3 @@
-console.log("이야이야요");
-console.log(window);
+const first = getNode('.first');
+
+console.log(first);

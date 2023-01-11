@@ -10,7 +10,9 @@
     <script src="./lib/dom/attr.js"></script>
     <script src="./lib/dom/insert.js"></script>
     <script src="./lib/dom/css.js"></script>
-    <script defer src="./chapter/dom/05.styling.js"></script>
+    <script src="./lib/dom/bindEvent.js"></script>
+    <script defer src="./chapter/dom/06.event.js"></script>
+    <!-- <script src="./main.js"></script> -->
     <title>Document</title>
   </head>
   <body>
@@ -19,27 +21,8 @@
       <!-- 오잉 -->
       <span class="second">world</span>
     </h1>
-    <!-- <button class="button">버튼</button> -->
-    <!-- <div id="elem1"></div>
-    <div id="elem2"></div>
-
-    <script>
-      let name = prompt("이름을 알려주세요.", "<b>백승연</b>");
-
-      elem1.innerHTML = name;
-      elem2.textContent = name;
-    </script> -->
-
-    <!-- <div data-widget-name="menu">Choose the genre</div>
-
-    <script>
-      // getting it
-      let elem = document.querySelector("[data-widget-name]");
-
-      // reading the value
-      alert(elem.dataset.widgetName);
-      // or
-      alert(elem.getAttribute("data-widget-name"));
-    </script> -->
+    <div class="ground">
+      <img class="ball" src="https://en.js.cx/clipart/ball.svg" alt="축구공" />
+    </div>
   </body>
 </html>
