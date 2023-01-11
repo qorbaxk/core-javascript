@@ -1,11 +1,15 @@
 body{
   margin: 0;
-  height: 100vh;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
 }
-h1{
+span{
+  display: inline-block;
+  transition: all .5s;
+}
+span.is-active {
+  transform: translateY(-300px);
 }

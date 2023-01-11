@@ -9,3 +9,5 @@
 - [x] Attr 유틸함수
 - [x] Insert 유틸함수
 - [x] TypeError 유틸함수
+- [x] Styling
+- [x] CSS 유틸함수
