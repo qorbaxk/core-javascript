@@ -13,3 +13,4 @@
 - [x] CSS 유틸함수
 - [x] Event
 - [x] bindEvent 유틸함수
+- [x] Bubble
