@@ -1,9 +1,9 @@
-const typeError = (message) => {
+export const typeError = (message) => {
   throw new TypeError(message);
 };
-const refError = (message) => {
+export const refError = (message) => {
   throw new ReferenceError(message);
 };
-const syntaxError = (message) => {
+export const syntaxError = (message) => {
   throw new SyntaxError(message);
 };

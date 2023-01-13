@@ -1,5 +1,5 @@
 // 클래스 추가
-const addClass = (node, className) => {
+export const addClass = (node, className) => {
   if (typeof node === "string") {
     node = getNode(node);
   }
@@ -10,7 +10,7 @@ const addClass = (node, className) => {
 };
 
 // 클래스 제거
-const removeClass = (node, className) => {
+export const removeClass = (node, className) => {
   if (typeof node === "string") {
     node = getNode(node);
   }
@@ -25,7 +25,7 @@ const removeClass = (node, className) => {
 };
 
 // 클래스 토글
-const toggleClass = (node, className) => {
+export const toggleClass = (node, className) => {
   if (typeof node === "string") {
     node = getNode(node);
   }
@@ -66,5 +66,5 @@ const setCss = (node, prop, value) => {
 };
 
 // get, set 합쳐서 만든 css 함수
-const css = (node, prop, value) =>
+export const css = (node, prop, value) =>
   !value ? getCss(node, prop) : setCss(node, prop, value);

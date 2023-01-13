@@ -4,6 +4,15 @@
 //4. 두 수의 합을 더해주기
 //5. 화면에 출력하기
 
+import {
+  getNode,
+  css,
+  removeClass,
+  addClass,
+  refError,
+  typeError,
+} from "./lib/index.js";
+
 let firstInput = getNode("#firstNumber");
 let secondInput = getNode("#secondNumber");
 
@@ -27,6 +36,7 @@ const clearContents = (node) => {
   node.textContent = "";
 };
 
+// 계산 핸들러
 const handler = (e) => {
   e.preventDefault();
   let firstValue = +getInputValue(firstInput);
@@ -36,4 +46,15 @@ const handler = (e) => {
   insertLast(result, total);
 };
 
+const inputHandler = (e) => {
+  let firstValue = +getInputValue(firstInput);
+  let secondValue = +getInputValue(secondInput);
+  let total = sum(firstValue, secondValue);
+  clearContents(".result");
+  insertLast(result, total);
+};
+
 submit.addEventListener("click", handler);
+
+firstInput.addEventListener("change", inputHandler);
+secondInput.addEventListener("change", inputHandler);
