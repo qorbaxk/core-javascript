@@ -69,6 +69,8 @@ attr()
 
  */
 
+import {getNode} from "./getNode.js"
+
 function getAttr(node, prop) {
   // node = '.first'
   // prop = 'class'

@@ -1,3 +1,4 @@
+import { getNode } from "./getNode.js";
 
 export function bindEvent(node,type,handler){
   if(typeof node === 'string'){
