@@ -74,7 +74,7 @@ attr()
 
 
 
-function getAttr(node, prop) {
+export function getAttr(node, prop) {
   // node = '.first'
   // prop = 'class'
 
@@ -86,7 +86,7 @@ function getAttr(node, prop) {
 }
 
 // computed property
-function setAttr(node, prop, value) {
+export function setAttr(node, prop, value) {
   // validation : 확인
   if (typeof node === 'string') node = getNode(node);
   if (typeof prop !== 'string')

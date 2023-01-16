@@ -5,7 +5,11 @@ import {
   getNode,
   getNodes,
   visibleElement,
-  invisibleElement
+  invisibleElement,
+  insertLast,
+  attr,
+  clearContents,
+  memo
 } from "./lib/index.js";
 
 // [주사위 굴리기]
@@ -16,12 +20,34 @@ import {
 
 // diceAnimation() 을 주기적으로 호출해줘야 주사위 굴릴때마다 돌아감
 
+/* -------------------------------------------------------------------------- */
+/*                                   render                                   */
+/* -------------------------------------------------------------------------- */
 const [playBtn, recordBtn, resetBtn] = getNodes(".buttonGroup > button");
 // const playBtn = getNode(".buttonGroup > button:nth-child(1)");
 // const recordBtn = getNode(".buttonGroup > button:nth-child(2)");
 // const resetBtn = getNode(".buttonGroup > button:nth-child(3)");
 const recordListWrapper = getNode(".recordListWrapper");
+memo("tbody", () => getNode(".recordListWrapper tbody"));
 
+let count = 0;
+let total = 0;
+const renderRecordListItem = () => {
+  let diceValue = attr(memo('cube'), "data-dice");
+  total += +diceValue;
+  let template = /* html */ `<tr>
+  <td>${++count}</td>
+  <td>${diceValue}</td>
+  <td>${total}</td>
+  </tr>`;
+  insertLast(memo('tbody'), template);
+  // 새 값이 나올때 새 값에 포커스 주려고 
+  recordListWrapper.scrollTop = recordListWrapper.scrollHeight;
+};
+
+/* -------------------------------------------------------------------------- */
+/*                                    event                                   */
+/* -------------------------------------------------------------------------- */
 // IIFE 패턴
 const playHandler = (() => {
   let isRolling = false;
@@ -44,10 +70,14 @@ const playHandler = (() => {
 
 const recordHandler = () => {
   visibleElement(recordListWrapper);
+  renderRecordListItem();
 };
-const resetHandler = () =>{
+const resetHandler = () => {
   invisibleElement(recordListWrapper);
-}
+  clearContents(memo('tbody'));
+  count = 0;
+  total = 0;
+};
 
 playBtn.addEventListener("click", playHandler);
 recordBtn.addEventListener("click", recordHandler);
