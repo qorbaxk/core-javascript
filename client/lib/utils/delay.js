@@ -44,9 +44,9 @@ export const delayP = (options = {}) => {
   });
 };
 
-delayP(3000).then((res) => {
-  console.log(res);
-});
+// delayP(3000).then((res) => {
+//   console.log(res);
+// });
 
 // delayP()
 //   .then((res) => {
@@ -57,3 +57,43 @@ delayP(3000).then((res) => {
 //   });
 
 // console.log(delayP());
+
+/* -------------------------------------------------------------------------- */
+/*                                 async await                                */
+/* -------------------------------------------------------------------------- */
+
+// async는 일반함수를 promise를 반환하는 함수로 만든다.
+// await은 1. promise가 반환하는  result 가져오기
+//         2. 코드 실행 흐름 제어
+const delayA = async () => {
+  return "완료";
+};
+
+let result = await delayA();
+
+// console.log(result);
+
+// async function 라면끓이기() {
+//   try {
+//     await delayP(1500);
+//     first.style.top = "-100px";
+
+//     await delayP(1500);
+//     first.style.transform = "rotate(360deg)";
+
+//     await delayP(1500);
+//     first.style.top = "0px";
+
+//     await delayP(1500);
+//     console.log("계란넣기");
+
+//     // throw new Error("계란 껍질이 들어가버렸다!");
+
+//     await delayP(1500);
+//     console.log("그릇에담기");
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+
+// 라면끓이기();
