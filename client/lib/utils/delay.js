@@ -1,4 +1,5 @@
 import { getNode } from "../dom/getNode.js";
+import { isNumber, isObject } from "./typeOf.js";
 
 const first = getNode(".first");
 
@@ -16,12 +17,26 @@ delay(() => {
   });
 });
 
-const delayP = (
-  shouldReject = false,
-  timeout = 1000,
-  errorMessage = "알 수 없는 오류가 발생했습니다.",
-  data = "성공했습니다."
-) => {
+const defaultOptions = {
+  shouldReject: false,
+  timeout: 1000,
+  data: "성공",
+  errorMessage: "알 수 없는 오류가 발생했습니다.",
+};
+
+const delayP = (options = {}) => {
+  let config = { ...defaultOptions };
+  // 앞에있는걸 뒤에있는걸로 덮어씀
+
+  if (isNumber(options)) {
+    config.timeout = options;
+  }
+  if (isObject(options)) {
+    config = { ...config, ...options };
+  }
+
+  const { shouldReject, data, errorMessage, timeout } = config;
+
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       !shouldReject ? resolve(data) : reject(errorMessage);
@@ -29,7 +44,7 @@ const delayP = (
   });
 };
 
-delayP(false, 1000, "오류가 발생했다!").then((res) => {
+delayP(3000).then((res) => {
   console.log(res);
 });
 
