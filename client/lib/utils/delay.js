@@ -24,7 +24,7 @@ const defaultOptions = {
   errorMessage: "알 수 없는 오류가 발생했습니다.",
 };
 
-const delayP = (options = {}) => {
+export const delayP = (options = {}) => {
   let config = { ...defaultOptions };
   // 앞에있는걸 뒤에있는걸로 덮어씀
 
