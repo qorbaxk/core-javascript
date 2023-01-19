@@ -5,23 +5,26 @@ import {
   delayP,
   butter,
   renderUserCard,
-  getNode,
+  getNode as $,
   changeColor,
   renderSpinner,
+  renderError,
+  attr,
 } from "./lib/index.js";
 
-const userCardContainer = getNode(".user-card-inner");
+const userCardContainer = $(".user-card-inner");
 
 const rendingUserList = async () => {
   renderSpinner(userCardContainer);
   try {
-    await delayP(1000)
-    getNode('.loadingSpinner').remove();
+    await delayP(300);
+    $(".loadingSpinner").remove();
 
     let response = await butter.get(
-      "https://jsonplaceholder.typicode.com/users"
+      "http://localhost:3000/users"
     );
     let userData = response.data;
+
     userData.forEach((value) => {
       renderUserCard(userCardContainer, value);
     });
@@ -36,7 +39,23 @@ const rendingUserList = async () => {
     });
   } catch (err) {
     console.log(err);
+    renderError(userCardContainer);
   }
 };
 
 rendingUserList();
+
+const deleteHandler = (e) => {
+  let deleteBtn = e.target.closest("button");
+  let article = e.target.closest("article");
+
+  if (!deleteBtn || !article) return;
+
+  let id = attr(article,'data-index').slice(5)
+  butter.delete(`http://localhost:3000/users/${id}`).then(()=>{
+    userCardContainer.innerHTML = '';
+    rendingUserList()
+  })
+};
+
+userCardContainer.addEventListener("click", deleteHandler);
