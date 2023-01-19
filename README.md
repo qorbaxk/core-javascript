@@ -12,3 +12,4 @@
 [JavaScript 주접생성기 브랜치](https://github.com/qorbaxk/core-javascript/tree/04.jujeob)  
 [JavaScript 랜덤다이스 브랜치](https://github.com/qorbaxk/core-javascript/tree/05.randomDice)  
 [JavaScript ajax 브랜치](https://github.com/qorbaxk/core-javascript/tree/06.ajax)  
+[JavaScript storage 브랜치](https://github.com/qorbaxk/core-javascript/tree/07.storage)  
