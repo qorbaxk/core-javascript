@@ -1,29 +1,42 @@
-import { xhrData, insertLast, xhrPromise, butter } from "./lib/index.js";
+/* global gasp */
 
-// xhrData.get(
-//   "https://jsonplaceholder.typicode.com/users/1",
-//   (res) => {
-//     insertLast("body", JSON.stringify(res));
-//   },
-//   (err) => {
-//     insertLast("body", "데이터 로딩에 실패했습니다.");
-//   }
-// );
+import {
+  insertLast,
+  delayP,
+  butter,
+  renderUserCard,
+  getNode,
+  changeColor,
+  renderSpinner,
+} from "./lib/index.js";
 
-// xhrPromise
-//   .get("https://jsonplaceholder.typicode.com/users/1")
-//   .then((res) => {
-//     insertLast(document.body, JSON.stringify(res));
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
+const userCardContainer = getNode(".user-card-inner");
 
-const render = async () => {
-  let response = await butter.get(
-    "https://jsonplaceholder.typicode.com/users/1"
-  );
-  console.log(response);
+const rendingUserList = async () => {
+  renderSpinner(userCardContainer);
+  try {
+    await delayP(1000)
+    getNode('.loadingSpinner').remove();
+
+    let response = await butter.get(
+      "https://jsonplaceholder.typicode.com/users"
+    );
+    let userData = response.data;
+    userData.forEach((value) => {
+      renderUserCard(userCardContainer, value);
+    });
+
+    changeColor(".user-card");
+
+    gsap.to(gsap.utils.toArray(".user-card"), {
+      x: 0,
+      opacity: 1,
+      duration: 1.5,
+      stagger: 0.2,
+    });
+  } catch (err) {
+    console.log(err);
+  }
 };
 
-render()
+rendingUserList();
